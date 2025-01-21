@@ -4,8 +4,10 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "tsc-watch --onSuccess \"node ./dist/app.js\"",
+    "build_new": "tsc --init",
     "dev": "./node_modules/nodemon/bin/nodemon.js -e ts  --exec \"npm run start\"",
     "lint": "eslint .",
+    "build": "npm start build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "husain",
