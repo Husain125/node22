@@ -20,7 +20,7 @@ export class UserController {
     return a;
     } catch (error) {
       console.log(error)
-      return 'No Data'
+      return 'No Data Found'
     }
   }
 }
