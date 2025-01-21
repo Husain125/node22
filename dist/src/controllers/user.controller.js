@@ -20,7 +20,7 @@ let UserController = class UserController {
             }
             catch (error) {
                 console.log(error);
-                return 'No Data';
+                return 'No Data Found';
             }
         });
     }
