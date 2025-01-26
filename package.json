@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "dist/app.js",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node ./dist/app.js\"",
+    "start": "tsc-watch --onSuccess \"node ./dist/src/app.js\"",
     "build_new": "tsc --init",
-    "dev": "./node_modules/nodemon/bin/nodemon.js -e ts  --exec \"npm run start\"",
+    "dev": "nodemon src/app.ts",
     "lint": "eslint .",
     "build": "npm start build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,9 +25,10 @@
     "nodemon": "^3.1.9",
     "reflect-metadata": "^0.2.2",
     "routing-controllers": "^0.10.4",
+    "ts-node": "^10.9.2",
     "tsc-watch": "^6.2.1",
     "tslib": "^2.8.1",
-    "typedi": "^0.10.0"
+    "typedi": "0.8.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",

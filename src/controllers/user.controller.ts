@@ -1,26 +1,24 @@
-import "reflect-metadata";
 import { Get, JsonController } from 'routing-controllers';
-import { Inject } from 'typedi';
 import { UserService } from "../services/user.service";
 
-@JsonController()
+@JsonController('/user')
 export class UserController {
   constructor(
-    @Inject() private userService: UserService
-  ) {
-  }
+    private userService: UserService
+  ) {}
 
-
-  @Get('/addUser')
+  @Get('/add-user')
   async addUser() {
     try {
-    //   console.log(this);
-    // return '';
-    const a = await this.userService.addUser();
-    return a;
+      console.log('UserController Instance:', this);
+      const result = await this.userService.addUser();
+      return { success: true, data: result };
     } catch (error) {
-      console.log(error)
-      return 'No Data Found'
+      console.error('Error in addUser:', error);
+      return { success: false, message: 'Unable to add user' };
     }
   }
+
 }
+
+
